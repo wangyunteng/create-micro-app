@@ -66,23 +66,23 @@ export default function loadHtml (app) {
         const href = dom.getAttribute('href')
         if (dom.getAttribute('rel') === 'stylesheet' && href) {
           // 计入source缓存中
-          app.source.links.set(href, {
+          app.source.links.set(app.url + href, {
             code: '', // 代码内容
           })
         }
-        // 删除原有元素
+        // 删除原有元素d
         parent.removeChild(dom)
       } else if (dom instanceof HTMLScriptElement) {
         // 并提取js地址
         const src = dom.getAttribute('src')
         if (src) { // 远程script
-          app.source.scripts.set(src, {
+          app.source.scripts.set(app.url + src, {
             code: '', // 代码内容
             isExternal: true, // 是否远程script
           })
         } else if (dom.textContent) { // 内联script
           const nonceStr = Math.random().toString(36).substr(2, 15)
-          app.source.scripts.set(nonceStr, {
+          app.source.scripts.set(app.url + nonceStr, {
             code: dom.textContent, // 代码内容
             isExternal: false, // 是否远程script
           })
