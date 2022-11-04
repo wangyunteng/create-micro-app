@@ -1,10 +1,10 @@
 // /src/index.js
 
-import { defineElement } from './element'
+import { defineElement } from "./element";
 const SimpleMicroApp = {
-  start () {
-    defineElement()
-  }
-}
+  start() {
+    defineElement();
+  },
+};
 
-export default SimpleMicroApp
+export default SimpleMicroApp;

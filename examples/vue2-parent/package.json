@@ -49,7 +49,9 @@
       "parser": "@babel/eslint-parser",
       "requireConfigFile": false
     },
-    "rules": {},
+    "rules": {
+      "endOfLine": "auto" 
+    },
     "overrides": [
       {
         "files": [
